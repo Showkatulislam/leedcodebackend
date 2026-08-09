@@ -1,0 +1,142 @@
+# Project Structure
+
+This file maintains an up-to-date list of project files and structure.
+
+## File Structure
+
+- 📁 `.vscode/`
+  - 📄 `.vscode\project-structure.md` (Markdown)
+- 📁 `.windsurf/`
+- 📁 `prisma/`
+  - 📁 `prisma\migrations/`
+    - 📁 `prisma\migrations\20260809031206_init/`
+      - 📄 `prisma\migrations\20260809031206_init\migration.sql` (Unknown)
+    - 📄 `prisma\migrations\migration_lock.toml` (Unknown)
+  - 📄 `prisma\schema.prisma` (Unknown)
+  - 📄 `prisma\seed.ts` (TypeScript)
+    - *Imports:* `../src/shared/db/prisma.service.js`
+- 📁 `src/`
+  - 📁 `src\generated/`
+    - 📁 `src\generated\prisma/`
+      - 📁 `src\generated\prisma\internal/`
+        - 📄 `src\generated\prisma\internal\class.ts` (TypeScript)
+          - *Imports:* `@prisma/client/runtime/client`, `./prismaNamespace.js`
+          - *Exports:* `getPrismaClientClass`
+        - 📄 `src\generated\prisma\internal\prismaNamespace.ts` (TypeScript)
+          - *Imports:* `@prisma/client/runtime/client`, `../models.js`, `./class.js`
+          - *Exports:* `* from ../models.js`
+        - 📄 `src\generated\prisma\internal\prismaNamespaceBrowser.ts` (TypeScript)
+          - *Imports:* `@prisma/client/runtime/index-browser`
+          - *Exports:* `* from ../models.js`, `* from ./prismaNamespace.js`
+      - 📁 `src\generated\prisma\models/`
+        - 📄 `src\generated\prisma\models\Contest.ts` (TypeScript)
+          - *Imports:* `@prisma/client/runtime/client`, `../enums.js`, `../internal/prismaNamespace.js`
+        - 📄 `src\generated\prisma\models\ContestProblem.ts` (TypeScript)
+          - *Imports:* `@prisma/client/runtime/client`, `../enums.js`, `../internal/prismaNamespace.js`
+        - 📄 `src\generated\prisma\models\Language.ts` (TypeScript)
+          - *Imports:* `@prisma/client/runtime/client`, `../enums.js`, `../internal/prismaNamespace.js`
+        - 📄 `src\generated\prisma\models\Problem.ts` (TypeScript)
+          - *Imports:* `@prisma/client/runtime/client`, `../enums.js`, `../internal/prismaNamespace.js`
+        - 📄 `src\generated\prisma\models\ProblemTag.ts` (TypeScript)
+          - *Imports:* `@prisma/client/runtime/client`, `../enums.js`, `../internal/prismaNamespace.js`
+        - 📄 `src\generated\prisma\models\RefreshToken.ts` (TypeScript)
+          - *Imports:* `@prisma/client/runtime/client`, `../enums.js`, `../internal/prismaNamespace.js`
+        - 📄 `src\generated\prisma\models\Role.ts` (TypeScript)
+          - *Imports:* `@prisma/client/runtime/client`, `../enums.js`, `../internal/prismaNamespace.js`
+        - 📄 `src\generated\prisma\models\Submission.ts` (TypeScript)
+          - *Imports:* `@prisma/client/runtime/client`, `../enums.js`, `../internal/prismaNamespace.js`
+        - 📄 `src\generated\prisma\models\Tag.ts` (TypeScript)
+          - *Imports:* `@prisma/client/runtime/client`, `../enums.js`, `../internal/prismaNamespace.js`
+        - 📄 `src\generated\prisma\models\TestCase.ts` (TypeScript)
+          - *Imports:* `@prisma/client/runtime/client`, `../enums.js`, `../internal/prismaNamespace.js`
+        - 📄 `src\generated\prisma\models\User.ts` (TypeScript)
+          - *Imports:* `@prisma/client/runtime/client`, `../enums.js`, `../internal/prismaNamespace.js`
+        - 📄 `src\generated\prisma\models\UserContest.ts` (TypeScript)
+          - *Imports:* `@prisma/client/runtime/client`, `../enums.js`, `../internal/prismaNamespace.js`
+      - 📄 `src\generated\prisma\browser.ts` (TypeScript)
+        - *Imports:* `./internal/prismaNamespaceBrowser.js`
+        - *Exports:* `Prisma`, `* from ./enums.js`, `* from ./enums.js`
+      - 📄 `src\generated\prisma\client.ts` (TypeScript)
+        - *Imports:* `node:process`, `node:path`, `node:url`, `@prisma/client/runtime/client`, `./enums.js`, `./internal/class.js`, `./internal/prismaNamespace.js`
+        - *Exports:* `* from ./enums.js`, `* from ./enums.js`, `Prisma`
+      - 📄 `src\generated\prisma\commonInputTypes.ts` (TypeScript)
+        - *Imports:* `@prisma/client/runtime/client`, `./enums.js`, `./internal/prismaNamespace.js`
+      - 📄 `src\generated\prisma\enums.ts` (TypeScript)
+      - 📄 `src\generated\prisma\models.ts` (TypeScript)
+        - *Exports:* `* from ./models/Role.js`, `* from ./models/User.js`, `* from ./models/RefreshToken.js`, `* from ./models/Problem.js`, `* from ./models/Tag.js`, `* from ./models/ProblemTag.js`, `* from ./models/TestCase.js`, `* from ./models/Language.js`, `* from ./models/Submission.js`, `* from ./models/Contest.js`, `* from ./models/ContestProblem.js`, `* from ./models/UserContest.js`, `* from ./commonInputTypes.js`
+  - 📁 `src\modules/`
+    - 📁 `src\modules\problems/`
+      - 📄 `src\modules\problems\problem.controller.ts` (TypeScript)
+      - 📄 `src\modules\problems\problem.repository.ts` (TypeScript)
+      - 📄 `src\modules\problems\problem.routes.ts` (TypeScript)
+      - 📄 `src\modules\problems\problem.schema.ts` (TypeScript)
+      - 📄 `src\modules\problems\problem.service.ts` (TypeScript)
+    - 📁 `src\modules\submissions/`
+      - 📄 `src\modules\submissions\submission.controller.ts` (TypeScript)
+      - 📄 `src\modules\submissions\submission.repository.ts` (TypeScript)
+      - 📄 `src\modules\submissions\submission.routes.ts` (TypeScript)
+      - 📄 `src\modules\submissions\submission.schema.ts` (TypeScript)
+      - 📄 `src\modules\submissions\submission.service.ts` (TypeScript)
+    - 📁 `src\modules\users/`
+      - 📄 `src\modules\users\user.controller.ts` (TypeScript)
+        - *Exports:* `Use`
+      - 📄 `src\modules\users\user.interface.ts` (TypeScript)
+        - *Imports:* `../../generated/prisma/client.js`
+      - 📄 `src\modules\users\user.repository.ts` (TypeScript)
+        - *Imports:* `../../generated/prisma/client.js`, `../../shared/db/prisma.service.js`, `./user.interface.js`
+        - *Exports:* `UserRepository`
+      - 📄 `src\modules\users\user.routes.ts` (TypeScript)
+      - 📄 `src\modules\users\user.schema.ts` (TypeScript)
+      - 📄 `src\modules\users\user.service.ts` (TypeScript)
+        - *Exports:* `UserService`
+  - 📁 `src\shared/`
+    - 📁 `src\shared\config/`
+      - 📄 `src\shared\config\env.ts` (TypeScript)
+        - *Imports:* `dotenv`
+      - 📄 `src\shared\config\logger.ts` (TypeScript)
+        - *Imports:* `pino`, `./env`
+    - 📁 `src\shared\db/`
+      - 📄 `src\shared\db\prisma.service.ts` (TypeScript)
+        - *Imports:* `@prisma/adapter-mariadb`, `../config/env.js`, `../../generated/prisma/client.js`
+    - 📁 `src\shared\errors/`
+      - 📄 `src\shared\errors\app-errors.ts` (TypeScript)
+        - *Exports:* `AppError`
+    - 📁 `src\shared\middlewares/`
+      - 📄 `src\shared\middlewares\async-handler.ts` (TypeScript)
+        - *Imports:* `express`
+      - 📄 `src\shared\middlewares\error.ts` (TypeScript)
+        - *Imports:* `express`, `../config/logger`, `../errors/app-errors`, `../config/env`
+        - *Exports:* `errorHandler`
+      - 📄 `src\shared\middlewares\not-found.ts` (TypeScript)
+        - *Imports:* `express`, `../errors/app-errors`
+        - *Exports:* `notFound`
+      - 📄 `src\shared\middlewares\validate.ts` (TypeScript)
+        - *Imports:* `express`, `zod/v3`
+    - 📁 `src\shared\utils/`
+      - 📄 `src\shared\utils\apiResponse.ts` (TypeScript)
+        - *Imports:* `express`
+        - *Exports:* `apiResponse`
+      - 📄 `src\shared\utils\appError.ts` (TypeScript)
+    - 📁 `src\shared\validation/`
+  - 📄 `src\app.ts` (TypeScript)
+    - *Imports:* `express`, `cors`, `pino-http`, `./shared/config/logger`, `./shared/middlewares/not-found`, `./shared/middlewares/error`
+    - *Routes Provided:* `GET /health`
+  - 📄 `src\server.ts` (TypeScript)
+    - *Imports:* `./app`, `./shared/config/env`, `./shared/config/logger`
+- 📄 `.env` (Unknown)
+- 📄 `.gitignore` (Unknown)
+- 📄 `.prettierignore` (Unknown)
+- 📄 `.prettierrc` (Unknown)
+- 📄 `ER.excalidraw` (Unknown)
+- 📄 `package-lock.json` (JSON)
+- 📄 `package.json` (JSON)
+- 📄 `prisma.config.ts` (TypeScript)
+  - *Imports:* `dotenv/config`, `prisma/config`
+  - *Routes Provided:* `GET prisma/migrations`, `GET prisma/migrations`
+- 📄 `setup.js` (JavaScript)
+  - *Imports:* `fs`, `path`
+- 📄 `skills-lock.json` (JSON)
+- 📄 `tsconfig.json` (JSON)
+
+---
+Last updated: 2026-08-09T09:11:35.704Z
