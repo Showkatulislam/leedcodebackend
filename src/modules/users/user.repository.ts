@@ -1,3 +1,4 @@
+import { Role } from "../../generated/prisma/browser.js";
 import { User } from "../../generated/prisma/client.js";
 import { prisma } from "../../shared/db/prisma.service.js";
 import { IUserRepository } from "./user.interface.js";
@@ -23,6 +24,14 @@ export class UserRepository implements IUserRepository{
         return prisma.user.findUnique({
             where:{
                 username
+            }
+        })
+    }
+
+    async findRoleByName(name:string):Promise<Role | null>{
+        return prisma.role.findUnique({
+            where:{
+                name
             }
         })
     }

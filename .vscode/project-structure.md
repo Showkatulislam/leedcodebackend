@@ -88,6 +88,7 @@ This file maintains an up-to-date list of project files and structure.
       - 📄 `src\modules\users\user.routes.ts` (TypeScript)
       - 📄 `src\modules\users\user.schema.ts` (TypeScript)
       - 📄 `src\modules\users\user.service.ts` (TypeScript)
+        - *Imports:* `./user.interface.js`
         - *Exports:* `UserService`
   - 📁 `src\shared/`
     - 📁 `src\shared\config/`
@@ -101,6 +102,9 @@ This file maintains an up-to-date list of project files and structure.
     - 📁 `src\shared\errors/`
       - 📄 `src\shared\errors\app-errors.ts` (TypeScript)
         - *Exports:* `AppError`
+      - 📄 `src\shared\errors\prisma-error.ts` (TypeScript)
+        - *Imports:* `../../generated/prisma/client.js`, `./app-errors.js`
+        - *Exports:* `handlePrismaError`
     - 📁 `src\shared\middlewares/`
       - 📄 `src\shared\middlewares\async-handler.ts` (TypeScript)
         - *Imports:* `express`
@@ -123,6 +127,8 @@ This file maintains an up-to-date list of project files and structure.
     - *Routes Provided:* `GET /health`
   - 📄 `src\server.ts` (TypeScript)
     - *Imports:* `./app`, `./shared/config/env`, `./shared/config/logger`
+  - 📄 `src\test.repository.ts` (TypeScript)
+    - *Imports:* `./modules/users/user.repository.js`
 - 📄 `.env` (Unknown)
 - 📄 `.gitignore` (Unknown)
 - 📄 `.prettierignore` (Unknown)
@@ -133,10 +139,11 @@ This file maintains an up-to-date list of project files and structure.
 - 📄 `prisma.config.ts` (TypeScript)
   - *Imports:* `dotenv/config`, `prisma/config`
   - *Routes Provided:* `GET prisma/migrations`, `GET prisma/migrations`
+- 📄 `README.md` (Markdown)
 - 📄 `setup.js` (JavaScript)
   - *Imports:* `fs`, `path`
 - 📄 `skills-lock.json` (JSON)
 - 📄 `tsconfig.json` (JSON)
 
 ---
-Last updated: 2026-08-09T09:11:35.704Z
+Last updated: 2026-08-10T06:54:50.688Z
