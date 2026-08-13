@@ -18,7 +18,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '18'
+        node-version: 'v24.18.0'
 
     # Step 3: Run a command (like running tests)
     - name: Run a test message
