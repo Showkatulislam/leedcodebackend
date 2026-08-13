@@ -78,17 +78,20 @@ This file maintains an up-to-date list of project files and structure.
       - 📄 `src\modules\submissions\submission.schema.ts` (TypeScript)
       - 📄 `src\modules\submissions\submission.service.ts` (TypeScript)
     - 📁 `src\modules\users/`
+      - 📄 `src\modules\users\auth.types.ts` (TypeScript)
       - 📄 `src\modules\users\user.controller.ts` (TypeScript)
-        - *Exports:* `Use`
+        - *Imports:* `express`, `../../shared/utils/catchAsync.js`, `./user.service.js`
+        - *Exports:* `UserController`
       - 📄 `src\modules\users\user.interface.ts` (TypeScript)
-        - *Imports:* `../../generated/prisma/client.js`
+        - *Imports:* `../../generated/prisma/browser.js`, `../../generated/prisma/client.js`
       - 📄 `src\modules\users\user.repository.ts` (TypeScript)
-        - *Imports:* `../../generated/prisma/client.js`, `../../shared/db/prisma.service.js`, `./user.interface.js`
+        - *Imports:* `../../generated/prisma/browser.js`, `../../generated/prisma/client.js`, `../../shared/db/prisma.service.js`, `./user.interface.js`
         - *Exports:* `UserRepository`
       - 📄 `src\modules\users\user.routes.ts` (TypeScript)
       - 📄 `src\modules\users\user.schema.ts` (TypeScript)
+        - *Imports:* `zod`
       - 📄 `src\modules\users\user.service.ts` (TypeScript)
-        - *Imports:* `./user.interface.js`
+        - *Imports:* `zod`, `../../shared/errors/app-errors.js`, `../../shared/utils/password.js`, `./user.interface.js`, `./user.schema.js`
         - *Exports:* `UserService`
   - 📁 `src\shared/`
     - 📁 `src\shared\config/`
@@ -121,19 +124,30 @@ This file maintains an up-to-date list of project files and structure.
         - *Imports:* `express`
         - *Exports:* `apiResponse`
       - 📄 `src\shared\utils\appError.ts` (TypeScript)
+      - 📄 `src\shared\utils\catchAsync.ts` (TypeScript)
+        - *Imports:* `express`, `express-serve-static-core`, `qs`
+      - 📄 `src\shared\utils\password.ts` (TypeScript)
+        - *Imports:* `bcrypt`
+        - *Exports:* `hashPassword`, `comparePassword`
+      - 📄 `src\shared\utils\sendResponse.ts` (TypeScript)
     - 📁 `src\shared\validation/`
+  - 📁 `src\test/`
+    - 📄 `src\test\test.password.ts` (TypeScript)
+      - *Imports:* `../shared/utils/password.js`
+    - 📄 `src\test\test.repository.ts` (TypeScript)
+      - *Imports:* `./modules/users/user.repository.js`
+    - 📄 `src\test\validator.ts` (TypeScript)
   - 📄 `src\app.ts` (TypeScript)
     - *Imports:* `express`, `cors`, `pino-http`, `./shared/config/logger`, `./shared/middlewares/not-found`, `./shared/middlewares/error`
     - *Routes Provided:* `GET /health`
   - 📄 `src\server.ts` (TypeScript)
     - *Imports:* `./app`, `./shared/config/env`, `./shared/config/logger`
-  - 📄 `src\test.repository.ts` (TypeScript)
-    - *Imports:* `./modules/users/user.repository.js`
 - 📄 `.env` (Unknown)
 - 📄 `.gitignore` (Unknown)
 - 📄 `.prettierignore` (Unknown)
 - 📄 `.prettierrc` (Unknown)
 - 📄 `ER.excalidraw` (Unknown)
+- 📄 `needed.txt` (Unknown)
 - 📄 `package-lock.json` (JSON)
 - 📄 `package.json` (JSON)
 - 📄 `prisma.config.ts` (TypeScript)
@@ -146,4 +160,4 @@ This file maintains an up-to-date list of project files and structure.
 - 📄 `tsconfig.json` (JSON)
 
 ---
-Last updated: 2026-08-10T06:54:50.688Z
+Last updated: 2026-08-13T02:11:41.531Z

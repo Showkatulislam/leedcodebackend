@@ -6,6 +6,7 @@ export class UserController{
     constructor(private service:UserService){}
     
     register = catchAsync(async(req:Request,res:Response)=>{
+        const user = await this.service.register(req.body);
         
     })
     
