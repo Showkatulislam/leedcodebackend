@@ -1,6 +1,6 @@
-import App from "./app";
-import { env } from "./shared/config/env";
-import { logger } from "./shared/config/logger";
+import App from "./app.js";
+import { env } from "./shared/config/env.js";
+import { logger } from "./shared/config/logger.js";
 
 const app = new App(env.port);
 

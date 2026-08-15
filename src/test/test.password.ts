@@ -8,17 +8,11 @@ async function main() {
   console.log("Original:", password);
   console.log("Hash:", hashedPassword);
 
-  const valid = await comparePassword(
-    password,
-    hashedPassword,
-  );
+  const valid = await comparePassword(password, hashedPassword);
 
   console.log("Correct password:", valid);
 
-  const invalid = await comparePassword(
-    "WrongPassword",
-    hashedPassword,
-  );
+  const invalid = await comparePassword("WrongPassword", hashedPassword);
 
   console.log("Wrong password:", invalid);
 }

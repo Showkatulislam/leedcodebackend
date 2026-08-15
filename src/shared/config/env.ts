@@ -28,8 +28,8 @@ export const env = {
   jwt: {
     accessSecret: getEnv("JWT_ACCESS_SECRET"),
     refreshSecret: getEnv("JWT_REFRESH_SECRET"),
-    accessExpiresIn:getEnv("JWT_ACCESS_EXPIRES_IN"),
-    refreshExpiresIn:getEnv("JWT_REFRESH_EXPIRES_IN")
+    accessExpiresIn: getEnv("JWT_ACCESS_EXPIRES_IN"),
+    refreshExpiresIn: getEnv("JWT_REFRESH_EXPIRES_IN"),
   },
 
   logLevel: getEnv("LOG_LEVEL"),

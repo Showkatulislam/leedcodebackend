@@ -1,9 +1,10 @@
 import express, { Application } from "express";
 import cors from "cors";
+import { notFound } from "./shared/middlewares/not-found.js";
+import { errorHandler } from "./shared/middlewares/error.js";
 import { pinoHttp } from "pino-http";
-import { logger } from "./shared/config/logger";
-import { notFound } from "./shared/middlewares/not-found";
-import { errorHandler } from "./shared/middlewares/error";
+import { logger } from "./shared/config/logger.js";
+import authRouter from "./modules/users/user.routes.js";
 /* 
 import { errorHandler } from "./middlewares/error.middleware";
 import { notFoundHandler } from "./middlewares/notFound.middleware" */ class App {
@@ -50,6 +51,8 @@ import { notFoundHandler } from "./middlewares/notFound.middleware" */ class App
         timestamp: new Date().toISOString(),
       });
     });
+
+    this.app.use("/api/v1/auth", authRouter);
 
     // Example
     // this.app.use("/api/v1/auth", authRoutes);

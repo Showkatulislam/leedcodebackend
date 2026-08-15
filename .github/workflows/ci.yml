@@ -3,23 +3,23 @@ name: My First CI Pipeline
 # Trigger this workflow on every push to the main branch
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
     runs-on: ubuntu-latest # Runs on a fresh Linux virtual machine
 
     steps:
-    # Step 1: Download your code onto the machine
-    - name: Checkout code
-      uses: actions/checkout@v4
+      # Step 1: Download your code onto the machine
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    # Step 2: Setup a programming environment (e.g., Node.js)
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 'v24.18.0'
+      # Step 2: Setup a programming environment (e.g., Node.js)
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "v24.18.0"
 
-    # Step 3: Run a command (like running tests)
-    - name: Run a test message
-      run: echo "Hello! Your code successfully built and tested!"
+      # Step 3: Run a command (like running tests)
+      - name: Run a test message
+        run: echo "Hello! Your code successfully built and tested!"
